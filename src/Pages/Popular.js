@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../components/Card";
 
 class Popular extends React.Component {
   constructor() {
@@ -27,6 +28,9 @@ class Popular extends React.Component {
     return (
       <div>
         <h1>Popular</h1>
+        {this.state.movies.map((data) => (
+          <Card movie={data}></Card>
+        ))}
       </div>
     );
   }
