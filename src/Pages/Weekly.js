@@ -1,9 +1,6 @@
 import React from "react";
 
 class Weekly extends React.Component {
-  constructor() {
-    super();
-  }
   render() {
     return (
       <div>
