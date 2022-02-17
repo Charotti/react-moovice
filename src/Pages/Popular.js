@@ -28,9 +28,13 @@ class Popular extends React.Component {
     return (
       <div>
         <h1>Popular</h1>
-        {this.state.movies.map((data) => (
-          <Card movie={data}></Card>
-        ))}
+        {/* On transfère chaque élément du tableau dans un component Card */}
+
+        <div className="d-flex flex-wrap justify-content-around ">
+          {this.state.movies.map((data) => (
+            <Card movie={data}></Card>
+          ))}
+        </div>
       </div>
     );
   }

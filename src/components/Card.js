@@ -3,21 +3,24 @@ import React from "react";
 class Card extends React.Component {
   render() {
     return (
-      <div class="card" style="width: 18rem;">
+      // Dans réact mettre entre accolades le style, mettre les guillemets entre la valeur et non la width et enlever le ;
+      <div className="card" style={{ width: "18rem" }}>
+        {/* Mettre en props le map de movies (movie) avec la cle poster-path */}
         <img
-          src="https://image.tmdb.org/t/p/w300/"
+          src={
+            "https://image.tmdb.org/t/p/w300/" + this.props.movie.poster_path
+          }
           class="card-img-top"
           alt="..."
         />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+        <div className="card-body">
+          <h5 className="card-title">{this.props.movie.title}</h5>
+          <p className="card-text overflow-auto" style={{ height: "10rem" }}>
+            {this.props.movie.overview}
           </p>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">{this.props.movie.release_date}</li>
         </ul>
       </div>
     );
